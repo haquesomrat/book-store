@@ -54,7 +54,7 @@ const BookCard = ({ book }) => {
                 : `Currently no one has rented this book`}
             </p>
           </div>
-          <AddToCart />
+          <AddToCart book={book} />
         </div>
       </div>
     </Link>
