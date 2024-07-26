@@ -1,9 +1,10 @@
-import { getBookById } from "@/app/lib/fake-data";
+import { getBookById } from "@/db/queries";
 import Image from "next/image";
 import React from "react";
 
-const BookDetailsPage = ({ params: { id } }) => {
-  const book = getBookById(id);
+const BookDetailsPage = async ({ params: { id } }) => {
+  const book = await getBookById(id);
+  console.log(book);
   return (
     <div className="flex flex-col items-center gap-2 max-w-3xl">
       <Image

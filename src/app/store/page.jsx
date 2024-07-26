@@ -4,7 +4,6 @@ import { getAllBooks } from "@/db/queries";
 
 const BookListpage = async () => {
   const books = await getAllBooks();
-  console.log(books);
 
   return <BookList books={books} />;
 };
