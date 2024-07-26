@@ -4,6 +4,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import StoreProvider from "./provider";
 
+import { dbConnect } from "@/services/mongo";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,7 +13,9 @@ export const metadata = {
   description: "An Online Bookstore",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const conn = await dbConnect();
+  console.log(conn);
   return (
     <StoreProvider>
       <html lang="en">
